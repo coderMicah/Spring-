@@ -13,12 +13,15 @@ public class GamingAppConfig {
  
 	@Bean
 	public GamingConsole game() {
-		return new PacmanGame();
+		//Spring must help us with object creation why are we still creating objects?
+		var game = new PacmanGame();
+		return game;
 	}
 	
 	@Bean 
 	public GameRunner gameRunner(GamingConsole game) {
-		return new GameRunner(game);
+		var gameRunner = new GameRunner(game);
+		return gameRunner;
 	}
 	
 	
